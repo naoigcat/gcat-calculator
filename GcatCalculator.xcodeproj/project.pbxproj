@@ -141,13 +141,9 @@
 		CD036D88220A26C300C598E1 /* GcatCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				CD036D89220A26C300C598E1 /* AppDelegate.swift */,
-				CD036D8B220A26C300C598E1 /* ViewController.swift */,
-				CD036D8D220A26C300C598E1 /* Main.storyboard */,
-				CD036D93220A26C600C598E1 /* Assets.xcassets */,
-				CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */,
-				CD036D98220A26C600C598E1 /* Info.plist */,
-				CD036D90220A26C300C598E1 /* GcatCalculator.xcdatamodeld */,
+				CD036DBD220A30FE00C598E1 /* Resources */,
+				CD036DBC220A30E400C598E1 /* Sources */,
+				CD036DBE220A311500C598E1 /* Supporting Files */,
 			);
 			path = GcatCalculator;
 			sourceTree = "<group>";
@@ -168,6 +164,42 @@
 				CD036DAE220A26C600C598E1 /* Info.plist */,
 			);
 			path = GcatCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		CD036DBC220A30E400C598E1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CD036DBF220A313C00C598E1 /* Views */,
+				CD036D89220A26C300C598E1 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CD036DBD220A30FE00C598E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD036D93220A26C600C598E1 /* Assets.xcassets */,
+				CD036D90220A26C300C598E1 /* GcatCalculator.xcdatamodeld */,
+				CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD036DBE220A311500C598E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD036D98220A26C600C598E1 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD036DBF220A313C00C598E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD036D8D220A26C300C598E1 /* Main.storyboard */,
+				CD036D8B220A26C300C598E1 /* ViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +449,7 @@
 				CD036D8E220A26C300C598E1 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */ = {
@@ -425,6 +458,7 @@
 				CD036D96220A26C600C598E1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -551,7 +585,7 @@
 			baseConfigurationReference = 18C65BE04211F17741DE6F0F /* Pods-GcatCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = GcatCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GcatCalculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +602,7 @@
 			baseConfigurationReference = AD39B2055B3C73C905E45B2C /* Pods-GcatCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = GcatCalculator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GcatCalculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
