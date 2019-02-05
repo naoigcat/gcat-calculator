@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DB082DA8DF0A36EB0D2E4F0 /* libPods-GcatCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D4F1FEB508848FC5B82C14 /* libPods-GcatCalculator.a */; };
+		8577AD4452AE6C8B395788E0 /* libPods-GcatCalculatorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A046283FE8403FBC62F67AF7 /* libPods-GcatCalculatorUITests.a */; };
 		CD036D8A220A26C300C598E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036D89220A26C300C598E1 /* AppDelegate.swift */; };
 		CD036D8C220A26C300C598E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036D8B220A26C300C598E1 /* ViewController.swift */; };
 		CD036D8F220A26C300C598E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD036D8D220A26C300C598E1 /* Main.storyboard */; };
@@ -15,6 +17,7 @@
 		CD036D97220A26C600C598E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */; };
 		CD036DA2220A26C600C598E1 /* GcatCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036DA1220A26C600C598E1 /* GcatCalculatorTests.swift */; };
 		CD036DAD220A26C600C598E1 /* GcatCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036DAC220A26C600C598E1 /* GcatCalculatorUITests.swift */; };
+		E21D1DFDFED5D75FB8006CD3 /* libPods-GcatCalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0F712B93DE6DCD69D26DD4 /* libPods-GcatCalculatorTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		146CDA301B3570A687ADDB87 /* Pods-GcatCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculatorUITests/Pods-GcatCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		18C65BE04211F17741DE6F0F /* Pods-GcatCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculator/Pods-GcatCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		632191051ACE422B9658A50B /* Pods-GcatCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculatorTests/Pods-GcatCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6338C852C8DC19AFE607412C /* Pods-GcatCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculatorTests/Pods-GcatCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F0F712B93DE6DCD69D26DD4 /* libPods-GcatCalculatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GcatCalculatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A046283FE8403FBC62F67AF7 /* libPods-GcatCalculatorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GcatCalculatorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A91BA7F259729CF164502E82 /* Pods-GcatCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculatorUITests/Pods-GcatCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A9D4F1FEB508848FC5B82C14 /* libPods-GcatCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GcatCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD39B2055B3C73C905E45B2C /* Pods-GcatCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GcatCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-GcatCalculator/Pods-GcatCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		CD036D86220A26C300C598E1 /* GcatCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GcatCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD036D89220A26C300C598E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD036D8B220A26C300C598E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +61,7 @@
 		CD036DA8220A26C600C598E1 /* GcatCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GcatCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD036DAC220A26C600C598E1 /* GcatCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GcatCalculatorUITests.swift; sourceTree = "<group>"; };
 		CD036DAE220A26C600C598E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD036DBB220A2AAA00C598E1 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DB082DA8DF0A36EB0D2E4F0 /* libPods-GcatCalculator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21D1DFDFED5D75FB8006CD3 /* libPods-GcatCalculatorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +85,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8577AD4452AE6C8B395788E0 /* libPods-GcatCalculatorUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F92FC85C99CEEC8F4DAA40A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9D4F1FEB508848FC5B82C14 /* libPods-GcatCalculator.a */,
+				9F0F712B93DE6DCD69D26DD4 /* libPods-GcatCalculatorTests.a */,
+				A046283FE8403FBC62F67AF7 /* libPods-GcatCalculatorUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		505647C80BEA41670536F659 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18C65BE04211F17741DE6F0F /* Pods-GcatCalculator.debug.xcconfig */,
+				AD39B2055B3C73C905E45B2C /* Pods-GcatCalculator.release.xcconfig */,
+				632191051ACE422B9658A50B /* Pods-GcatCalculatorTests.debug.xcconfig */,
+				6338C852C8DC19AFE607412C /* Pods-GcatCalculatorTests.release.xcconfig */,
+				A91BA7F259729CF164502E82 /* Pods-GcatCalculatorUITests.debug.xcconfig */,
+				146CDA301B3570A687ADDB87 /* Pods-GcatCalculatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CD036D7D220A26C300C598E1 = {
 			isa = PBXGroup;
 			children = (
+				1F92FC85C99CEEC8F4DAA40A /* Frameworks */,
 				CD036D88220A26C300C598E1 /* GcatCalculator */,
 				CD036DA0220A26C600C598E1 /* GcatCalculatorTests */,
 				CD036DAB220A26C600C598E1 /* GcatCalculatorUITests */,
+				505647C80BEA41670536F659 /* Pods */,
 				CD036D87220A26C300C598E1 /* Products */,
+				CD036DBB220A2AAA00C598E1 /* Gemfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +177,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD036DB1220A26C600C598E1 /* Build configuration list for PBXNativeTarget "GcatCalculator" */;
 			buildPhases = (
+				99BCF9AB7D84BC1DAB582704 /* [CP] Check Pods Manifest.lock */,
 				CD036D82220A26C300C598E1 /* Sources */,
 				CD036D83220A26C300C598E1 /* Frameworks */,
 				CD036D84220A26C300C598E1 /* Resources */,
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD036DB4220A26C600C598E1 /* Build configuration list for PBXNativeTarget "GcatCalculatorTests" */;
 			buildPhases = (
+				AB689BD46CB7B0560F8646D6 /* [CP] Check Pods Manifest.lock */,
 				CD036D99220A26C600C598E1 /* Sources */,
 				CD036D9A220A26C600C598E1 /* Frameworks */,
 				CD036D9B220A26C600C598E1 /* Resources */,
@@ -170,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD036DB7220A26C600C598E1 /* Build configuration list for PBXNativeTarget "GcatCalculatorUITests" */;
 			buildPhases = (
+				C031EEA23AFED73C481ED167 /* [CP] Check Pods Manifest.lock */,
 				CD036DA4220A26C600C598E1 /* Sources */,
 				CD036DA5220A26C600C598E1 /* Frameworks */,
 				CD036DA6220A26C600C598E1 /* Resources */,
@@ -253,6 +298,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99BCF9AB7D84BC1DAB582704 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GcatCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB689BD46CB7B0560F8646D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GcatCalculatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C031EEA23AFED73C481ED167 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GcatCalculatorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD036D82220A26C300C598E1 /* Sources */ = {
@@ -434,6 +548,7 @@
 		};
 		CD036DB2220A26C600C598E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C65BE04211F17741DE6F0F /* Pods-GcatCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GcatCalculator/Info.plist;
@@ -450,6 +565,7 @@
 		};
 		CD036DB3220A26C600C598E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD39B2055B3C73C905E45B2C /* Pods-GcatCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GcatCalculator/Info.plist;
@@ -466,6 +582,7 @@
 		};
 		CD036DB5220A26C600C598E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 632191051ACE422B9658A50B /* Pods-GcatCalculatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +602,7 @@
 		};
 		CD036DB6220A26C600C598E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6338C852C8DC19AFE607412C /* Pods-GcatCalculatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +622,7 @@
 		};
 		CD036DB8220A26C600C598E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A91BA7F259729CF164502E82 /* Pods-GcatCalculatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GcatCalculatorUITests/Info.plist;
@@ -522,6 +641,7 @@
 		};
 		CD036DB9220A26C600C598E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146CDA301B3570A687ADDB87 /* Pods-GcatCalculatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = GcatCalculatorUITests/Info.plist;
