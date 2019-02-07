@@ -17,119 +17,158 @@ class SimpleCalculatorViewController: UIViewController {
         case divide
     }
 
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var inputLabel: UILabel!
     @IBOutlet weak var clearButton: RoundedButton!
+    @IBOutlet weak var addButton: OperatorButton!
+    @IBOutlet weak var subtractButton: OperatorButton!
+    @IBOutlet weak var multiplyButton: OperatorButton!
+    @IBOutlet weak var divideButton: OperatorButton!
 
-    private var memory: NSDecimalNumber?
+    private var input: Decimal {
+        get {
+            return Decimal(string: self.inputLabel.text ?? "") ?? Decimal(integerLiteral: 0)
+        }
+    }
+    private var memory: Decimal?
     private var method: Method?
-    private var needsClear = false
+    private var needsClearInput = false
+    private var needsClearMethod = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.resultLabel.text = "0"
+        self.inputLabel.text = "0"
     }
 
     private func updateClearButton() {
-        self.clearButton.setTitle(self.resultLabel.text == "0" ? "AC" : "C", for: .normal)
+        self.clearButton.setTitle(self.inputLabel.text == "0" ? "AC" : "C", for: .normal)
     }
 
     @IBAction func number(_ sender: RoundedButton) {
         guard let number = sender.titleLabel?.text else { return }
 
-        if (self.needsClear)
-        {
-            self.memory = NSDecimalNumber(string: self.resultLabel.text ?? "")
-            self.resultLabel.text = nil
+        if self.needsClearInput {
+            self.memory = self.input
+            self.inputLabel.text = nil
         }
-        var text = self.resultLabel.text ?? ""
-        if number == "." && (text.isEmpty || text == "0") {
+        if self.needsClearMethod {
+            self.method = nil
+        }
+        var text = self.inputLabel.text ?? ""
+        if number == "." {
+            if text.contains(".") {
+                return
+            }
             text = "0" + number
         } else if text == "0" {
             text = number
         } else {
             text += number
         }
-        self.resultLabel.text = text
-        self.needsClear = false
+        self.inputLabel.text = text
+        self.needsClearInput = false
+        self.needsClearMethod = false
         self.updateClearButton()
     }
 
     @IBAction func equal(_ sender: OperatorButton) {
         guard let method = self.method else { return }
 
-        let current = NSDecimalNumber(string: self.resultLabel.text ?? "")
+        let input = self.input
         if let memory = self.memory {
-            let result: NSDecimalNumber
-            switch (method)
-            {
-            case .add:
-                result = memory.adding(current)
-            case .subtract:
-                result = memory.subtracting(current)
-            case .multiply:
-                result = memory.multiplying(by: current)
-            case .divide:
-                result = memory.dividing(by: current)
-            }
-            self.resultLabel.text = result.stringValue
+            let (left, right) = ({ () -> (Decimal, Decimal) in
+                if !self.needsClearInput, !self.needsClearMethod {
+                    return (memory, input)
+                } else {
+                    return (input, memory)
+                }
+            })()
+            let result = ({ () -> Decimal in
+                switch (method)
+                {
+                case .add:
+                    return left + right
+                case .subtract:
+                    return left - right;
+                case .multiply:
+                    return left * right;
+                case .divide:
+                    return left / right;
+                }
+            })()
+            self.inputLabel.text = String(describing: result)
+            self.needsClearMethod = true
         }
-        if (!self.needsClear) {
-            self.memory = current
-            self.needsClear = true
+        if !self.needsClearInput {
+            self.memory = input
+            self.needsClearInput = true
         }
     }
 
     @IBAction func add(_ sender: OperatorButton) {
-        self.method = .add
-        if (!self.needsClear) {
+        if let _ = self.method, !self.needsClearInput {
             self.equal(sender)
+        } else {
+            self.memory = self.input
         }
+        self.needsClearInput = true
+        self.needsClearMethod = false
+        self.method = .add
     }
 
     @IBAction func subtract(_ sender: OperatorButton) {
-        self.method = .subtract
-        if (!self.needsClear) {
+        if let _ = self.method, !self.needsClearInput {
             self.equal(sender)
+        } else {
+            self.memory = self.input
         }
+        self.needsClearInput = true
+        self.needsClearMethod = false
+        self.method = .subtract
     }
 
     @IBAction func multiply(_ sender: OperatorButton) {
-        self.method = .multiply
-        if (!self.needsClear) {
+        if let _ = self.method, !self.needsClearInput {
             self.equal(sender)
+        } else {
+            self.memory = self.input
         }
+        self.needsClearInput = true
+        self.needsClearMethod = false
+        self.method = .multiply
     }
 
     @IBAction func divide(_ sender: OperatorButton) {
-        self.method = .divide
-        if (!self.needsClear) {
+        if let _ = self.method, !self.needsClearInput {
             self.equal(sender)
+        } else {
+            self.memory = self.input
         }
+        self.needsClearInput = true
+        self.needsClearMethod = false
+        self.method = .divide
     }
 
     @IBAction func percent(_ sender: RoundedButton) {
-        let current = NSDecimalNumber(string: self.resultLabel.text ?? "")
-        self.resultLabel.text = current.dividing(by: 100).stringValue
-        self.needsClear = true
+        self.inputLabel.text = String(describing: self.input / 100)
+        self.needsClearInput = true
     }
 
     @IBAction func changeSign(_ sender: SignChangeButton) {
-        let text = self.resultLabel.text ?? ""
-        if (text == "0") {
-            self.resultLabel.text = "-0"
+        let text = self.inputLabel.text ?? ""
+        if text == "0" {
+            self.inputLabel.text = "-0"
         } else {
-            let current = NSDecimalNumber(string: self.resultLabel.text ?? "")
-            self.resultLabel.text = current.multiplying(by: NSDecimalNumber(integerLiteral: -1)).stringValue
+            self.inputLabel.text = String(describing: self.input * -1)
         }
     }
 
     @IBAction func clear(_ sender: RoundedButton) {
-        if (self.clearButton.title(for: .normal) == "AC") {
+        if self.clearButton.title(for: .normal) == "AC" {
             self.memory = 0.0
             self.method = nil
-            self.needsClear = false
+            self.needsClearInput = false
         }
-        self.resultLabel.text = "0"
+        self.inputLabel.text = "0"
         self.updateClearButton()
     }
 
