@@ -1,24 +1,533 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Simple Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SimpleCalculatorViewController" customModule="GcatCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbH-UM-HpL">
+                                <rect key="frame" x="10" y="568.5" width="177.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEI-C7-k3h" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="167.5" height="78.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="0"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vfu-Bz-fY9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SEI-C7-k3h" secondAttribute="trailing" constant="5" id="3d2-CH-A3e"/>
+                                    <constraint firstItem="SEI-C7-k3h" firstAttribute="leading" secondItem="lbH-UM-HpL" secondAttribute="leading" constant="5" id="Cr7-BD-Pn0"/>
+                                    <constraint firstAttribute="bottom" secondItem="SEI-C7-k3h" secondAttribute="bottom" constant="5" id="jAE-3n-NiX"/>
+                                    <constraint firstItem="SEI-C7-k3h" firstAttribute="top" secondItem="lbH-UM-HpL" secondAttribute="top" constant="5" id="nbl-Xf-FgI"/>
+                                    <constraint firstAttribute="width" secondItem="lbH-UM-HpL" secondAttribute="height" multiplier="2:1" id="tdU-oQ-3SN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqr-ua-oMi">
+                                <rect key="frame" x="187.5" y="568.5" width="89" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIY-nX-AMu" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="78.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="."/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jFt-YR-tOQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SIY-nX-AMu" secondAttribute="trailing" constant="5" id="Cmy-4B-pEF"/>
+                                    <constraint firstAttribute="width" secondItem="pqr-ua-oMi" secondAttribute="height" multiplier="1:1" id="HA5-6T-HjO"/>
+                                    <constraint firstAttribute="bottom" secondItem="SIY-nX-AMu" secondAttribute="bottom" constant="5" id="JK9-rm-hic"/>
+                                    <constraint firstItem="SIY-nX-AMu" firstAttribute="top" secondItem="pqr-ua-oMi" secondAttribute="top" constant="5" id="Nmx-L2-hDU"/>
+                                    <constraint firstItem="SIY-nX-AMu" firstAttribute="leading" secondItem="pqr-ua-oMi" secondAttribute="leading" constant="5" id="uZw-OH-NpR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4X8-6o-2bi">
+                                <rect key="frame" x="276.5" y="568.5" width="88.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxs-b4-hq1" customClass="OperatorButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="78.5"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="="/>
+                                        <connections>
+                                            <action selector="equal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3x-ez-R7J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nxs-b4-hq1" secondAttribute="trailing" constant="5" id="B6b-dE-yKC"/>
+                                    <constraint firstAttribute="width" secondItem="4X8-6o-2bi" secondAttribute="height" multiplier="1:1" id="DkQ-EZ-U3g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nxs-b4-hq1" secondAttribute="bottom" constant="5" id="Kix-gW-uyL"/>
+                                    <constraint firstItem="Nxs-b4-hq1" firstAttribute="top" secondItem="4X8-6o-2bi" secondAttribute="top" constant="5" id="SGn-n7-f8Y"/>
+                                    <constraint firstItem="Nxs-b4-hq1" firstAttribute="leading" secondItem="4X8-6o-2bi" secondAttribute="leading" constant="5" id="mxq-n8-fZe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-Da-eKf">
+                                <rect key="frame" x="10" y="479.5" width="89" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIH-rx-2Xf" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="1"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1BY-cX-lS7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nIH-rx-2Xf" firstAttribute="leading" secondItem="XAS-Da-eKf" secondAttribute="leading" constant="5" id="6dy-t0-bNP"/>
+                                    <constraint firstAttribute="trailing" secondItem="nIH-rx-2Xf" secondAttribute="trailing" constant="5" id="EaR-dR-iud"/>
+                                    <constraint firstItem="nIH-rx-2Xf" firstAttribute="top" secondItem="XAS-Da-eKf" secondAttribute="top" constant="5" id="cuS-4Y-BrX"/>
+                                    <constraint firstAttribute="width" secondItem="XAS-Da-eKf" secondAttribute="height" multiplier="1:1" id="irl-oT-XqM"/>
+                                    <constraint firstAttribute="bottom" secondItem="nIH-rx-2Xf" secondAttribute="bottom" constant="5" id="nHT-g3-efs"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPl-wa-Waf">
+                                <rect key="frame" x="99" y="479.5" width="88.5" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cty-SY-uZ7" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="2"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GP9-yi-hxl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cty-SY-uZ7" secondAttribute="bottom" constant="5" id="SYY-t5-NkV"/>
+                                    <constraint firstAttribute="trailing" secondItem="cty-SY-uZ7" secondAttribute="trailing" constant="5" id="fju-Oy-X50"/>
+                                    <constraint firstItem="cty-SY-uZ7" firstAttribute="leading" secondItem="rPl-wa-Waf" secondAttribute="leading" constant="5" id="rom-is-MQ0"/>
+                                    <constraint firstAttribute="width" secondItem="rPl-wa-Waf" secondAttribute="height" multiplier="1:1" id="uxG-xf-fhf"/>
+                                    <constraint firstItem="cty-SY-uZ7" firstAttribute="top" secondItem="rPl-wa-Waf" secondAttribute="top" constant="5" id="x3X-Zu-wTM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-tN-Lb6">
+                                <rect key="frame" x="187.5" y="479.5" width="89" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDy-Sy-Nam" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="3"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lvr-rj-xNO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="LDy-Sy-Nam" firstAttribute="top" secondItem="ePT-tN-Lb6" secondAttribute="top" constant="5" id="8dQ-7w-uhd"/>
+                                    <constraint firstAttribute="bottom" secondItem="LDy-Sy-Nam" secondAttribute="bottom" constant="5" id="9eJ-Tm-97b"/>
+                                    <constraint firstAttribute="trailing" secondItem="LDy-Sy-Nam" secondAttribute="trailing" constant="5" id="EfV-Eg-XBy"/>
+                                    <constraint firstItem="LDy-Sy-Nam" firstAttribute="leading" secondItem="ePT-tN-Lb6" secondAttribute="leading" constant="5" id="tz5-py-t50"/>
+                                    <constraint firstAttribute="width" secondItem="ePT-tN-Lb6" secondAttribute="height" multiplier="1:1" id="z7c-6E-1KM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhv-SC-9cu">
+                                <rect key="frame" x="276.5" y="479.5" width="88.5" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kng-tI-JXF" customClass="OperatorButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="79"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afR-h0-0s0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dhv-SC-9cu" secondAttribute="height" multiplier="1:1" id="94B-AT-oh1"/>
+                                    <constraint firstItem="kng-tI-JXF" firstAttribute="leading" secondItem="Dhv-SC-9cu" secondAttribute="leading" constant="5" id="FbO-FG-7bA"/>
+                                    <constraint firstAttribute="trailing" secondItem="kng-tI-JXF" secondAttribute="trailing" constant="5" id="H4g-FH-AcP"/>
+                                    <constraint firstAttribute="bottom" secondItem="kng-tI-JXF" secondAttribute="bottom" constant="5" id="j3L-P6-miX"/>
+                                    <constraint firstItem="kng-tI-JXF" firstAttribute="top" secondItem="Dhv-SC-9cu" secondAttribute="top" constant="5" id="zuK-Vs-zi4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lq-o2-rV3">
+                                <rect key="frame" x="10" y="391" width="89" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-E7-PCW" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="78.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="4"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DC0-H3-jos"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6rE-E7-PCW" secondAttribute="bottom" constant="5" id="N3J-E2-nUA"/>
+                                    <constraint firstItem="6rE-E7-PCW" firstAttribute="top" secondItem="0Lq-o2-rV3" secondAttribute="top" constant="5" id="Rum-XS-OvY"/>
+                                    <constraint firstAttribute="width" secondItem="0Lq-o2-rV3" secondAttribute="height" multiplier="1:1" id="fBL-TY-86L"/>
+                                    <constraint firstAttribute="trailing" secondItem="6rE-E7-PCW" secondAttribute="trailing" constant="5" id="qkx-Y8-cww"/>
+                                    <constraint firstItem="6rE-E7-PCW" firstAttribute="leading" secondItem="0Lq-o2-rV3" secondAttribute="leading" constant="5" id="sxL-Py-Iui"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kg2-ma-X0X">
+                                <rect key="frame" x="99" y="391" width="88.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W44-rI-MU1" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="78.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="5"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7yk-xg-4sM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="W44-rI-MU1" secondAttribute="bottom" constant="5" id="BAf-xz-K7P"/>
+                                    <constraint firstAttribute="trailing" secondItem="W44-rI-MU1" secondAttribute="trailing" constant="5" id="K0L-Th-99x"/>
+                                    <constraint firstItem="W44-rI-MU1" firstAttribute="top" secondItem="Kg2-ma-X0X" secondAttribute="top" constant="5" id="Swy-yo-Ych"/>
+                                    <constraint firstItem="W44-rI-MU1" firstAttribute="leading" secondItem="Kg2-ma-X0X" secondAttribute="leading" constant="5" id="Utz-ac-QFu"/>
+                                    <constraint firstAttribute="width" secondItem="Kg2-ma-X0X" secondAttribute="height" multiplier="1:1" id="fOb-sR-H1e"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ps9-HH-pry">
+                                <rect key="frame" x="187.5" y="391" width="89" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Us-I4-zfR" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="78.5"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="6"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mzd-Gm-Bjg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Us-I4-zfR" secondAttribute="trailing" constant="5" id="Htb-Qg-eHK"/>
+                                    <constraint firstAttribute="width" secondItem="ps9-HH-pry" secondAttribute="height" multiplier="1:1" id="IFn-SG-7Mj"/>
+                                    <constraint firstItem="5Us-I4-zfR" firstAttribute="leading" secondItem="ps9-HH-pry" secondAttribute="leading" constant="5" id="PuO-Hv-atQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Us-I4-zfR" secondAttribute="bottom" constant="5" id="RJb-Q1-EOL"/>
+                                    <constraint firstItem="5Us-I4-zfR" firstAttribute="top" secondItem="ps9-HH-pry" secondAttribute="top" constant="5" id="ofJ-vM-4bw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckU-aL-Gs6">
+                                <rect key="frame" x="276.5" y="391" width="88.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsi-pg-rHW" customClass="OperatorButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="78.5"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="−"/>
+                                        <connections>
+                                            <action selector="subtract:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bvh-Qn-1cQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jsi-pg-rHW" secondAttribute="trailing" constant="5" id="FHB-SP-R0N"/>
+                                    <constraint firstAttribute="width" secondItem="ckU-aL-Gs6" secondAttribute="height" multiplier="1:1" id="X4m-1M-M8V"/>
+                                    <constraint firstItem="Jsi-pg-rHW" firstAttribute="leading" secondItem="ckU-aL-Gs6" secondAttribute="leading" constant="5" id="bVq-Ig-Wnk"/>
+                                    <constraint firstItem="Jsi-pg-rHW" firstAttribute="top" secondItem="ckU-aL-Gs6" secondAttribute="top" constant="5" id="mgS-eW-Pbt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jsi-pg-rHW" secondAttribute="bottom" constant="5" id="xaA-Xg-TZ0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYD-yB-0GR">
+                                <rect key="frame" x="10" y="302" width="89" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqi-mB-U4S" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="7"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zP6-0m-aic"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XYD-yB-0GR" secondAttribute="height" multiplier="1:1" id="JEh-Fb-8Cx"/>
+                                    <constraint firstItem="Fqi-mB-U4S" firstAttribute="leading" secondItem="XYD-yB-0GR" secondAttribute="leading" constant="5" id="LJr-ft-b3s"/>
+                                    <constraint firstItem="Fqi-mB-U4S" firstAttribute="top" secondItem="XYD-yB-0GR" secondAttribute="top" constant="5" id="R3F-su-ecF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fqi-mB-U4S" secondAttribute="trailing" constant="5" id="a3Z-jd-mIh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fqi-mB-U4S" secondAttribute="bottom" constant="5" id="oIQ-p7-xDc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3v-PD-FY8">
+                                <rect key="frame" x="99" y="302" width="88.5" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-kx-vNR" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="8"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ApS-4n-w0s"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="A9p-kx-vNR" firstAttribute="top" secondItem="L3v-PD-FY8" secondAttribute="top" constant="5" id="3EN-PG-zgI"/>
+                                    <constraint firstItem="A9p-kx-vNR" firstAttribute="leading" secondItem="L3v-PD-FY8" secondAttribute="leading" constant="5" id="AD4-Zp-8O8"/>
+                                    <constraint firstAttribute="trailing" secondItem="A9p-kx-vNR" secondAttribute="trailing" constant="5" id="Jq9-5G-9W7"/>
+                                    <constraint firstAttribute="width" secondItem="L3v-PD-FY8" secondAttribute="height" multiplier="1:1" id="eXI-kJ-BOn"/>
+                                    <constraint firstAttribute="bottom" secondItem="A9p-kx-vNR" secondAttribute="bottom" constant="5" id="qWG-jP-HBD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-lV-Btg">
+                                <rect key="frame" x="187.5" y="302" width="89" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze4-3q-FgQ" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="79"/>
+                                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="9"/>
+                                        <connections>
+                                            <action selector="number:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D8N-6E-Crf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ze4-3q-FgQ" secondAttribute="bottom" constant="5" id="9KD-UA-GtX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ze4-3q-FgQ" secondAttribute="trailing" constant="5" id="UqJ-PX-xnw"/>
+                                    <constraint firstItem="Ze4-3q-FgQ" firstAttribute="top" secondItem="5lk-lV-Btg" secondAttribute="top" constant="5" id="auu-oe-8SQ"/>
+                                    <constraint firstItem="Ze4-3q-FgQ" firstAttribute="leading" secondItem="5lk-lV-Btg" secondAttribute="leading" constant="5" id="cO3-6P-oiW"/>
+                                    <constraint firstAttribute="width" secondItem="5lk-lV-Btg" secondAttribute="height" multiplier="1:1" id="puF-a7-qGU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nO-yS-CFK">
+                                <rect key="frame" x="276.5" y="302" width="88.5" height="89"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQw-o9-C7w" customClass="OperatorButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="79"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="×"/>
+                                        <connections>
+                                            <action selector="multiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Vn-Xb-mMI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4nO-yS-CFK" secondAttribute="height" multiplier="1:1" id="KSb-0y-tRT"/>
+                                    <constraint firstAttribute="trailing" secondItem="WQw-o9-C7w" secondAttribute="trailing" constant="5" id="V78-F1-9PV"/>
+                                    <constraint firstItem="WQw-o9-C7w" firstAttribute="leading" secondItem="4nO-yS-CFK" secondAttribute="leading" constant="5" id="VHp-I3-uS3"/>
+                                    <constraint firstItem="WQw-o9-C7w" firstAttribute="top" secondItem="4nO-yS-CFK" secondAttribute="top" constant="5" id="rfk-CJ-3M6"/>
+                                    <constraint firstAttribute="bottom" secondItem="WQw-o9-C7w" secondAttribute="bottom" constant="5" id="rva-Ss-PJ4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m36-7c-ykG">
+                                <rect key="frame" x="10" y="213.5" width="89" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRD-X9-eEO" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="78.5"/>
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="AC"/>
+                                        <connections>
+                                            <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdb-9Y-iPG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vRD-X9-eEO" secondAttribute="bottom" constant="5" id="PM6-Pa-rOb"/>
+                                    <constraint firstAttribute="width" secondItem="m36-7c-ykG" secondAttribute="height" multiplier="1:1" id="dbb-Cx-e02"/>
+                                    <constraint firstItem="vRD-X9-eEO" firstAttribute="leading" secondItem="m36-7c-ykG" secondAttribute="leading" constant="5" id="eKQ-Gq-Hpc"/>
+                                    <constraint firstAttribute="trailing" secondItem="vRD-X9-eEO" secondAttribute="trailing" constant="5" id="eO9-Bp-0hT"/>
+                                    <constraint firstItem="vRD-X9-eEO" firstAttribute="top" secondItem="m36-7c-ykG" secondAttribute="top" constant="5" id="h9i-PX-Wcf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4q-Zj-uOK">
+                                <rect key="frame" x="99" y="213.5" width="88.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-BN-L1P" customClass="SignChangeButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="78.5"/>
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="24"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13d-mC-TX9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2BV-BN-L1P" firstAttribute="leading" secondItem="N4q-Zj-uOK" secondAttribute="leading" constant="5" id="0L0-fO-b6D"/>
+                                    <constraint firstAttribute="trailing" secondItem="2BV-BN-L1P" secondAttribute="trailing" constant="5" id="5gZ-hE-p1u"/>
+                                    <constraint firstAttribute="width" secondItem="N4q-Zj-uOK" secondAttribute="height" multiplier="1:1" id="Nwt-2w-ME9"/>
+                                    <constraint firstItem="2BV-BN-L1P" firstAttribute="top" secondItem="N4q-Zj-uOK" secondAttribute="top" constant="5" id="Olv-Je-8c2"/>
+                                    <constraint firstAttribute="bottom" secondItem="2BV-BN-L1P" secondAttribute="bottom" constant="5" id="evi-Wu-5RD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-GQ-ogf">
+                                <rect key="frame" x="187.5" y="213.5" width="89" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQj-2Z-sEG" customClass="NumberButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="79" height="78.5"/>
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="%"/>
+                                        <connections>
+                                            <action selector="percent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sN6-D2-vUw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iQj-2Z-sEG" firstAttribute="leading" secondItem="MIn-GQ-ogf" secondAttribute="leading" constant="5" id="85O-6g-qhC"/>
+                                    <constraint firstAttribute="trailing" secondItem="iQj-2Z-sEG" secondAttribute="trailing" constant="5" id="JhY-2a-v4v"/>
+                                    <constraint firstItem="iQj-2Z-sEG" firstAttribute="top" secondItem="MIn-GQ-ogf" secondAttribute="top" constant="5" id="KHf-fc-Dql"/>
+                                    <constraint firstAttribute="bottom" secondItem="iQj-2Z-sEG" secondAttribute="bottom" constant="5" id="ePz-A4-ofQ"/>
+                                    <constraint firstAttribute="width" secondItem="MIn-GQ-ogf" secondAttribute="height" multiplier="1:1" id="hDZ-16-zKI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUW-rO-pTS">
+                                <rect key="frame" x="276.5" y="213.5" width="88.5" height="88.5"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbY-fp-jaB" customClass="OperatorButton" customModule="GcatCalculator" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="5" width="78.5" height="78.5"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="÷"/>
+                                        <connections>
+                                            <action selector="divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dVk-ig-Du2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oUW-rO-pTS" secondAttribute="height" multiplier="1:1" id="Fl1-Ct-tx3"/>
+                                    <constraint firstAttribute="bottom" secondItem="YbY-fp-jaB" secondAttribute="bottom" constant="5" id="FtC-pu-pOP"/>
+                                    <constraint firstItem="YbY-fp-jaB" firstAttribute="top" secondItem="oUW-rO-pTS" secondAttribute="top" constant="5" id="MLe-3W-MwS"/>
+                                    <constraint firstItem="YbY-fp-jaB" firstAttribute="leading" secondItem="oUW-rO-pTS" secondAttribute="leading" constant="5" id="ggl-na-PvE"/>
+                                    <constraint firstAttribute="trailing" secondItem="YbY-fp-jaB" secondAttribute="trailing" constant="5" id="q44-3B-QBR"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Vxk-IZ-paH">
+                                <rect key="frame" x="15" y="137" width="345" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lbH-UM-HpL" firstAttribute="width" secondItem="pqr-ua-oMi" secondAttribute="width" multiplier="2" id="2q0-c9-ogV"/>
+                            <constraint firstItem="4X8-6o-2bi" firstAttribute="top" secondItem="Dhv-SC-9cu" secondAttribute="bottom" id="5oe-8u-jlk"/>
+                            <constraint firstItem="MIn-GQ-ogf" firstAttribute="leading" secondItem="N4q-Zj-uOK" secondAttribute="trailing" id="66v-UI-3DM"/>
+                            <constraint firstItem="N4q-Zj-uOK" firstAttribute="top" secondItem="Vxk-IZ-paH" secondAttribute="bottom" id="6V2-oI-3QZ"/>
+                            <constraint firstItem="pqr-ua-oMi" firstAttribute="top" secondItem="ePT-tN-Lb6" secondAttribute="bottom" id="6jC-ic-3Re"/>
+                            <constraint firstItem="N4q-Zj-uOK" firstAttribute="width" secondItem="m36-7c-ykG" secondAttribute="width" id="AqF-O8-JKC"/>
+                            <constraint firstItem="rPl-wa-Waf" firstAttribute="top" secondItem="Kg2-ma-X0X" secondAttribute="bottom" id="AyQ-4h-Amb"/>
+                            <constraint firstItem="L3v-PD-FY8" firstAttribute="top" secondItem="N4q-Zj-uOK" secondAttribute="bottom" id="BV6-up-EF0"/>
+                            <constraint firstItem="MIn-GQ-ogf" firstAttribute="width" secondItem="oUW-rO-pTS" secondAttribute="width" id="Brh-dQ-Xkm"/>
+                            <constraint firstItem="XAS-Da-eKf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ByW-ap-Zr8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4nO-yS-CFK" secondAttribute="trailing" constant="10" id="CJY-VY-izu"/>
+                            <constraint firstItem="ckU-aL-Gs6" firstAttribute="width" secondItem="ps9-HH-pry" secondAttribute="width" id="FEI-i4-DiJ"/>
+                            <constraint firstItem="pqr-ua-oMi" firstAttribute="leading" secondItem="lbH-UM-HpL" secondAttribute="trailing" id="FaW-Lv-Z4y"/>
+                            <constraint firstItem="ckU-aL-Gs6" firstAttribute="leading" secondItem="ps9-HH-pry" secondAttribute="trailing" id="GtL-le-EiE"/>
+                            <constraint firstItem="4nO-yS-CFK" firstAttribute="top" secondItem="oUW-rO-pTS" secondAttribute="bottom" id="HtW-EI-OLd"/>
+                            <constraint firstItem="Dhv-SC-9cu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="J8g-uc-7un"/>
+                            <constraint firstItem="0Lq-o2-rV3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="K63-Pv-ogG"/>
+                            <constraint firstItem="Vxk-IZ-paH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KGV-3W-BoF"/>
+                            <constraint firstItem="ePT-tN-Lb6" firstAttribute="leading" secondItem="rPl-wa-Waf" secondAttribute="trailing" id="L4O-fo-kI1"/>
+                            <constraint firstItem="Kg2-ma-X0X" firstAttribute="width" secondItem="0Lq-o2-rV3" secondAttribute="width" id="Mij-Ux-jgv"/>
+                            <constraint firstItem="Kg2-ma-X0X" firstAttribute="top" secondItem="L3v-PD-FY8" secondAttribute="bottom" id="No6-by-T5z"/>
+                            <constraint firstItem="ps9-HH-pry" firstAttribute="top" secondItem="5lk-lV-Btg" secondAttribute="bottom" id="Qyg-EQ-A68"/>
+                            <constraint firstItem="m36-7c-ykG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SLH-OG-8iR"/>
+                            <constraint firstItem="m36-7c-ykG" firstAttribute="top" secondItem="Vxk-IZ-paH" secondAttribute="bottom" id="T7Z-4Y-b8a"/>
+                            <constraint firstItem="L3v-PD-FY8" firstAttribute="width" secondItem="5lk-lV-Btg" secondAttribute="width" id="VGE-Zi-0bJ"/>
+                            <constraint firstItem="lbH-UM-HpL" firstAttribute="top" secondItem="rPl-wa-Waf" secondAttribute="bottom" id="W76-cQ-muZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vxk-IZ-paH" secondAttribute="trailing" constant="15" id="YXv-22-d76"/>
+                            <constraint firstItem="N4q-Zj-uOK" firstAttribute="leading" secondItem="m36-7c-ykG" secondAttribute="trailing" id="ZpO-Ls-gG0"/>
+                            <constraint firstItem="MIn-GQ-ogf" firstAttribute="top" secondItem="Vxk-IZ-paH" secondAttribute="bottom" id="Zq8-JR-9xv"/>
+                            <constraint firstItem="ckU-aL-Gs6" firstAttribute="top" secondItem="4nO-yS-CFK" secondAttribute="bottom" id="ZwR-0q-ucP"/>
+                            <constraint firstItem="rPl-wa-Waf" firstAttribute="width" secondItem="ePT-tN-Lb6" secondAttribute="width" id="aRl-fQ-2uc"/>
+                            <constraint firstItem="5lk-lV-Btg" firstAttribute="top" secondItem="MIn-GQ-ogf" secondAttribute="bottom" id="bOA-H4-dud"/>
+                            <constraint firstItem="XAS-Da-eKf" firstAttribute="width" secondItem="rPl-wa-Waf" secondAttribute="width" id="bhk-um-Rhs"/>
+                            <constraint firstItem="XYD-yB-0GR" firstAttribute="top" secondItem="m36-7c-ykG" secondAttribute="bottom" id="cup-Ys-ULe"/>
+                            <constraint firstItem="Dhv-SC-9cu" firstAttribute="width" secondItem="ePT-tN-Lb6" secondAttribute="width" id="cvT-pI-eba"/>
+                            <constraint firstItem="ePT-tN-Lb6" firstAttribute="top" secondItem="ps9-HH-pry" secondAttribute="bottom" id="dPf-CP-IBi"/>
+                            <constraint firstItem="5lk-lV-Btg" firstAttribute="leading" secondItem="L3v-PD-FY8" secondAttribute="trailing" id="e2Q-xR-VrV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4X8-6o-2bi" secondAttribute="bottom" constant="10" id="e3K-5d-2zt"/>
+                            <constraint firstItem="XYD-yB-0GR" firstAttribute="width" secondItem="L3v-PD-FY8" secondAttribute="width" id="eEj-yl-dmd"/>
+                            <constraint firstItem="XYD-yB-0GR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="exx-1C-RRp"/>
+                            <constraint firstItem="ps9-HH-pry" firstAttribute="width" secondItem="Kg2-ma-X0X" secondAttribute="width" id="f6C-sv-TM9"/>
+                            <constraint firstItem="5lk-lV-Btg" firstAttribute="width" secondItem="4nO-yS-CFK" secondAttribute="width" id="fJ1-Lx-kzn"/>
+                            <constraint firstItem="MIn-GQ-ogf" firstAttribute="width" secondItem="N4q-Zj-uOK" secondAttribute="width" id="g03-vb-c6E"/>
+                            <constraint firstItem="Kg2-ma-X0X" firstAttribute="leading" secondItem="0Lq-o2-rV3" secondAttribute="trailing" id="gLP-t5-pCy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pqr-ua-oMi" secondAttribute="bottom" constant="10" id="hsL-iC-vNp"/>
+                            <constraint firstItem="Dhv-SC-9cu" firstAttribute="leading" secondItem="ePT-tN-Lb6" secondAttribute="trailing" id="i5S-3T-RPw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lbH-UM-HpL" secondAttribute="bottom" constant="10" id="k2u-qI-KiO"/>
+                            <constraint firstItem="oUW-rO-pTS" firstAttribute="top" secondItem="Vxk-IZ-paH" secondAttribute="bottom" id="kYb-Sx-1tg"/>
+                            <constraint firstItem="L3v-PD-FY8" firstAttribute="leading" secondItem="XYD-yB-0GR" secondAttribute="trailing" id="lKB-71-kgY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4X8-6o-2bi" secondAttribute="trailing" constant="10" id="lSQ-5l-Zha"/>
+                            <constraint firstItem="oUW-rO-pTS" firstAttribute="leading" secondItem="MIn-GQ-ogf" secondAttribute="trailing" id="obT-gw-JPl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ckU-aL-Gs6" secondAttribute="trailing" constant="10" id="oyw-WB-okt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oUW-rO-pTS" secondAttribute="trailing" constant="10" id="pZ0-aP-Jgi"/>
+                            <constraint firstItem="ps9-HH-pry" firstAttribute="leading" secondItem="Kg2-ma-X0X" secondAttribute="trailing" id="qcR-sS-ATt"/>
+                            <constraint firstItem="rPl-wa-Waf" firstAttribute="leading" secondItem="XAS-Da-eKf" secondAttribute="trailing" id="rJc-mh-6jP"/>
+                            <constraint firstItem="pqr-ua-oMi" firstAttribute="width" secondItem="4X8-6o-2bi" secondAttribute="width" id="tYy-Jd-hq1"/>
+                            <constraint firstItem="lbH-UM-HpL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tZZ-HT-3CC"/>
+                            <constraint firstItem="XAS-Da-eKf" firstAttribute="top" secondItem="0Lq-o2-rV3" secondAttribute="bottom" id="u8v-cx-MBe"/>
+                            <constraint firstItem="0Lq-o2-rV3" firstAttribute="top" secondItem="XYD-yB-0GR" secondAttribute="bottom" id="w3F-iN-Bmt"/>
+                            <constraint firstItem="lbH-UM-HpL" firstAttribute="top" secondItem="XAS-Da-eKf" secondAttribute="bottom" id="w7c-TC-wBa"/>
+                            <constraint firstItem="4X8-6o-2bi" firstAttribute="leading" secondItem="pqr-ua-oMi" secondAttribute="trailing" id="woi-Rd-jXM"/>
+                            <constraint firstItem="4nO-yS-CFK" firstAttribute="leading" secondItem="5lk-lV-Btg" secondAttribute="trailing" id="xnt-7W-gDR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="Vxk-IZ-paH" secondAttribute="leading" constant="-15" id="y8N-f2-5Ai"/>
+                            <constraint firstItem="Dhv-SC-9cu" firstAttribute="top" secondItem="ckU-aL-Gs6" secondAttribute="bottom" id="ybF-Hs-Cbw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="vRD-X9-eEO" id="NS5-dt-hbm"/>
+                        <outlet property="resultLabel" destination="Vxk-IZ-paH" id="VBE-U9-sc8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>
