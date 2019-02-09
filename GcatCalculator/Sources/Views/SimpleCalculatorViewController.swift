@@ -30,7 +30,14 @@ class SimpleCalculatorViewController: UIViewController {
         }
     }
     private var memory: Decimal?
-    private var method: Method?
+    private var method: Method? {
+        didSet {
+            self.addButton.setSelected(self.method == .add)
+            self.subtractButton.setSelected(self.method == .subtract)
+            self.multiplyButton.setSelected(self.method == .multiply)
+            self.divideButton.setSelected(self.method == .divide)
+        }
+    }
     private var needsClearInput = false
     private var needsClearMethod = false
 

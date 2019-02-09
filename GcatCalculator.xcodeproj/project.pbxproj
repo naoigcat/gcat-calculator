@@ -19,6 +19,7 @@
 		CD036DAD220A26C600C598E1 /* GcatCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036DAC220A26C600C598E1 /* GcatCalculatorUITests.swift */; };
 		CD42E06F220B3AC7007710CE /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42E06E220B3AC7007710CE /* OperatorButton.swift */; };
 		CD830B02220B52F100E35D3A /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830B01220B52F100E35D3A /* NumberButton.swift */; };
+		CDB7C001220EB07C007DD9D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */; };
 		CDCD2DF4220B257A0074AABD /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD2DF3220B257A0074AABD /* RoundedButton.swift */; };
 		CDCD2DF7220B2C5D0074AABD /* SignChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD2DF6220B2C5D0074AABD /* SignChangeButton.swift */; };
 		E21D1DFDFED5D75FB8006CD3 /* libPods-GcatCalculatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0F712B93DE6DCD69D26DD4 /* libPods-GcatCalculatorTests.a */; };
@@ -68,6 +69,7 @@
 		CD036DBB220A2AAA00C598E1 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		CD42E06E220B3AC7007710CE /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
 		CD830B01220B52F100E35D3A /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		CDCD2DF3220B257A0074AABD /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		CDCD2DF6220B2C5D0074AABD /* SignChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignChangeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,10 +207,19 @@
 			isa = PBXGroup;
 			children = (
 				CDCD2DF5220B258C0074AABD /* Components */,
+				CDB7BFFF220EB049007DD9D1 /* Extensions */,
 				CD036D8D220A26C300C598E1 /* Main.storyboard */,
 				CD036D8B220A26C300C598E1 /* SimpleCalculatorViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CDB7BFFF220EB049007DD9D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CDCD2DF5220B258C0074AABD /* Components */ = {
@@ -426,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD036D8C220A26C300C598E1 /* SimpleCalculatorViewController.swift in Sources */,
+				CDB7C001220EB07C007DD9D1 /* UIColorExtensions.swift in Sources */,
 				CD830B02220B52F100E35D3A /* NumberButton.swift in Sources */,
 				CD42E06F220B3AC7007710CE /* OperatorButton.swift in Sources */,
 				CD036D8A220A26C300C598E1 /* AppDelegate.swift in Sources */,

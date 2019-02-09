@@ -18,4 +18,20 @@ class OperatorButton: RoundedButton {
         self.titleLabel?.font = UIFont.systemFont(ofSize: height / 2)
     }
 
+    public func setSelected(_ selected: Bool) {
+        UIView.animate(withDuration: 1, animations: {
+            if (selected) {
+                self.setBackgroundImage(UIColor.white.imageFilled(), for: .normal)
+                self.setBackgroundImage(UIColor.white.lightened()?.imageFilled(), for: .highlighted)
+                self.setTitleColor(self.backgroundColor, for: .normal)
+                self.setTitleColor(self.backgroundColor, for: .highlighted)
+            } else {
+                self.setBackgroundImage(self.backgroundColor?.imageFilled(), for: .normal)
+                self.setBackgroundImage(self.backgroundColor?.lightened()?.imageFilled(), for: .highlighted)
+                self.setTitleColor(UIColor.white, for: .normal)
+                self.setTitleColor(UIColor.white, for: .highlighted)
+            }
+        })
+    }
+    
 }
