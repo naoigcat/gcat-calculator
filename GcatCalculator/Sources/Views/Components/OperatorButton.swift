@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable
 class OperatorButton: RoundedButton {
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         let height = self.frame.size.height
         self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: height * 3 / 32, right: 0)
         self.titleLabel?.font = UIFont.systemFont(ofSize: height / 2)

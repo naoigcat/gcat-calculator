@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable
 class SignChangeButton: RoundedButton {
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         let height = self.frame.size.height
         self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: height / 32, right: 0)
         self.setTitle("", for: .normal)
