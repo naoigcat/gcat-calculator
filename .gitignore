@@ -68,5 +68,7 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 # bundler
-
 .bundle/
+
+# dotenv
+.env
