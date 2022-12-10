@@ -10,7 +10,6 @@
 		CD036D8A220A26C300C598E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036D89220A26C300C598E1 /* AppDelegate.swift */; };
 		CD036D8C220A26C300C598E1 /* SimpleCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036D8B220A26C300C598E1 /* SimpleCalculatorViewController.swift */; };
 		CD036D8F220A26C300C598E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD036D8D220A26C300C598E1 /* Main.storyboard */; };
-		CD036D92220A26C300C598E1 /* GcatCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD036D90220A26C300C598E1 /* GcatCalculator.xcdatamodeld */; };
 		CD036D94220A26C600C598E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD036D93220A26C600C598E1 /* Assets.xcassets */; };
 		CD036D97220A26C600C598E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */; };
 		CD036DA2220A26C600C598E1 /* GcatCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036DA1220A26C600C598E1 /* GcatCalculatorTests.swift */; };
@@ -44,7 +43,6 @@
 		CD036D89220A26C300C598E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD036D8B220A26C300C598E1 /* SimpleCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculatorViewController.swift; sourceTree = "<group>"; };
 		CD036D8E220A26C300C598E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CD036D91220A26C300C598E1 /* GcatCalculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GcatCalculator.xcdatamodel; sourceTree = "<group>"; };
 		CD036D93220A26C600C598E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD036D96220A26C600C598E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD036D98220A26C600C598E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				CD036D93220A26C600C598E1 /* Assets.xcassets */,
-				CD036D90220A26C300C598E1 /* GcatCalculator.xcdatamodeld */,
 				CD036D95220A26C600C598E1 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -337,7 +334,6 @@
 				CD830B02220B52F100E35D3A /* NumberButton.swift in Sources */,
 				CD42E06F220B3AC7007710CE /* OperatorButton.swift in Sources */,
 				CD036D8A220A26C300C598E1 /* AppDelegate.swift in Sources */,
-				CD036D92220A26C300C598E1 /* GcatCalculator.xcdatamodeld in Sources */,
 				CDCD2DF7220B2C5D0074AABD /* SignChangeButton.swift in Sources */,
 				CDCD2DF4220B257A0074AABD /* RoundedButton.swift in Sources */,
 			);
@@ -656,19 +652,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CD036D90220A26C300C598E1 /* GcatCalculator.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CD036D91220A26C300C598E1 /* GcatCalculator.xcdatamodel */,
-			);
-			currentVersion = CD036D91220A26C300C598E1 /* GcatCalculator.xcdatamodel */;
-			path = GcatCalculator.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CD036D7E220A26C300C598E1 /* Project object */;
 }
