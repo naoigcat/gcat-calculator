@@ -9,8 +9,7 @@
 import UIKit
 
 @IBDesignable
-class RoundedButton: UIButton {
-
+internal class RoundedButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setBackgroundImage(self.backgroundColor?.imageFilled(), for: .normal)
@@ -22,5 +21,4 @@ class RoundedButton: UIButton {
         let height = self.frame.size.height
         self.layer.cornerRadius = height / 2
     }
-
 }

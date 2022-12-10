@@ -6,29 +6,16 @@
 //  Copyright © 2019 naoigcat. All rights reserved.
 //
 
-import XCTest
 @testable import GcatCalculator
+import XCTest
 
-class GcatCalculatorTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+internal class GcatCalculatorTests: XCTestCase {
+    func testLightened() {
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+        #colorLiteral(red: 0.4, green: 0.6, blue: 0.8, alpha: 1).lightened()?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        XCTAssertEqual((red * 10).rounded(.toNearestOrEven) / 10, 0.6)
+        XCTAssertEqual((green * 10).rounded(.toNearestOrEven) / 10, 0.8)
+        XCTAssertEqual((blue * 10).rounded(.toNearestOrEven) / 10, 1.0)
+        XCTAssertEqual(alpha, 1)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

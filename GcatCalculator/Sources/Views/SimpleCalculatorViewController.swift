@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SimpleCalculatorViewController: UIViewController {
-
+internal class SimpleCalculatorViewController: UIViewController {
     enum Method {
         case add
         case subtract
@@ -17,17 +16,15 @@ class SimpleCalculatorViewController: UIViewController {
         case divide
     }
 
-    @IBOutlet weak var inputLabel: UILabel!
-    @IBOutlet weak var clearButton: RoundedButton!
-    @IBOutlet weak var addButton: OperatorButton!
-    @IBOutlet weak var subtractButton: OperatorButton!
-    @IBOutlet weak var multiplyButton: OperatorButton!
-    @IBOutlet weak var divideButton: OperatorButton!
+    @IBOutlet private var inputLabel: UILabel!
+    @IBOutlet private var clearButton: RoundedButton!
+    @IBOutlet private var addButton: OperatorButton!
+    @IBOutlet private var subtractButton: OperatorButton!
+    @IBOutlet private var multiplyButton: OperatorButton!
+    @IBOutlet private var divideButton: OperatorButton!
 
     private var input: Decimal {
-        get {
-            return Decimal(string: self.inputLabel.text ?? "") ?? Decimal(integerLiteral: 0)
-        }
+        Decimal(string: self.inputLabel.text ?? "") ?? 0
     }
     private var memory: Decimal?
     private var method: Method? {
@@ -50,8 +47,10 @@ class SimpleCalculatorViewController: UIViewController {
         self.clearButton.setTitle(self.inputLabel.text == "0" ? "AC" : "C", for: .normal)
     }
 
-    @IBAction func number(_ sender: RoundedButton) {
-        guard let number = sender.titleLabel?.text else { return }
+    @IBAction private func number(_ sender: RoundedButton) {
+        guard let number = sender.titleLabel?.text else {
+            return
+        }
 
         if self.needsClearInput {
             self.memory = self.input
@@ -77,8 +76,10 @@ class SimpleCalculatorViewController: UIViewController {
         self.updateClearButton()
     }
 
-    @IBAction func equal(_ sender: OperatorButton) {
-        guard let method = self.method else { return }
+    @IBAction private func equal(_ sender: OperatorButton) {
+        guard let method = self.method else {
+            return
+        }
 
         let input = self.input
         if let memory = self.memory {
@@ -90,16 +91,15 @@ class SimpleCalculatorViewController: UIViewController {
                 }
             })()
             let result = ({ () -> Decimal in
-                switch (method)
-                {
+                switch method {
                 case .add:
                     return left + right
                 case .subtract:
-                    return left - right;
+                    return left - right
                 case .multiply:
-                    return left * right;
+                    return left * right
                 case .divide:
-                    return left / right;
+                    return left / right
                 }
             })()
             self.inputLabel.text = String(describing: result)
@@ -111,8 +111,8 @@ class SimpleCalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func add(_ sender: OperatorButton) {
-        if let _ = self.method, !self.needsClearInput {
+    @IBAction private func add(_ sender: OperatorButton) {
+        if self.method != nil, !self.needsClearInput {
             self.equal(sender)
         } else {
             self.memory = self.input
@@ -122,8 +122,8 @@ class SimpleCalculatorViewController: UIViewController {
         self.method = .add
     }
 
-    @IBAction func subtract(_ sender: OperatorButton) {
-        if let _ = self.method, !self.needsClearInput {
+    @IBAction private func subtract(_ sender: OperatorButton) {
+        if self.method != nil, !self.needsClearInput {
             self.equal(sender)
         } else {
             self.memory = self.input
@@ -133,8 +133,8 @@ class SimpleCalculatorViewController: UIViewController {
         self.method = .subtract
     }
 
-    @IBAction func multiply(_ sender: OperatorButton) {
-        if let _ = self.method, !self.needsClearInput {
+    @IBAction private func multiply(_ sender: OperatorButton) {
+        if self.method != nil, !self.needsClearInput {
             self.equal(sender)
         } else {
             self.memory = self.input
@@ -144,8 +144,8 @@ class SimpleCalculatorViewController: UIViewController {
         self.method = .multiply
     }
 
-    @IBAction func divide(_ sender: OperatorButton) {
-        if let _ = self.method, !self.needsClearInput {
+    @IBAction private func divide(_ sender: OperatorButton) {
+        if self.method != nil, !self.needsClearInput {
             self.equal(sender)
         } else {
             self.memory = self.input
@@ -155,12 +155,12 @@ class SimpleCalculatorViewController: UIViewController {
         self.method = .divide
     }
 
-    @IBAction func percent(_ sender: RoundedButton) {
+    @IBAction private func percent(_ sender: RoundedButton) {
         self.inputLabel.text = String(describing: self.input / 100)
         self.needsClearInput = true
     }
 
-    @IBAction func changeSign(_ sender: SignChangeButton) {
+    @IBAction private func changeSign(_ sender: SignChangeButton) {
         let text = self.inputLabel.text ?? ""
         if text == "0" {
             self.inputLabel.text = "-0"
@@ -169,7 +169,7 @@ class SimpleCalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func clear(_ sender: RoundedButton) {
+    @IBAction private func clear(_ sender: RoundedButton) {
         if self.clearButton.title(for: .normal) == "AC" {
             self.memory = 0.0
             self.method = nil
@@ -178,5 +178,4 @@ class SimpleCalculatorViewController: UIViewController {
         self.inputLabel.text = "0"
         self.updateClearButton()
     }
-
 }

@@ -9,8 +9,7 @@
 import UIKit
 
 @IBDesignable
-class OperatorButton: RoundedButton {
-
+internal class OperatorButton: RoundedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         let height = self.frame.size.height
@@ -18,9 +17,9 @@ class OperatorButton: RoundedButton {
         self.titleLabel?.font = UIFont.systemFont(ofSize: height / 2)
     }
 
-    public func setSelected(_ selected: Bool) {
+    func setSelected(_ selected: Bool) {
         UIView.animate(withDuration: 1, animations: {
-            if (selected) {
+            if selected {
                 self.setBackgroundImage(UIColor.white.imageFilled(), for: .normal)
                 self.setBackgroundImage(UIColor.white.lightened()?.imageFilled(), for: .highlighted)
                 self.setTitleColor(self.backgroundColor, for: .normal)
@@ -33,5 +32,4 @@ class OperatorButton: RoundedButton {
             }
         })
     }
-    
 }

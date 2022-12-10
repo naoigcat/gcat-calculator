@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,7 @@
 		CD036DAD220A26C600C598E1 /* GcatCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD036DAC220A26C600C598E1 /* GcatCalculatorUITests.swift */; };
 		CD42E06F220B3AC7007710CE /* OperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42E06E220B3AC7007710CE /* OperatorButton.swift */; };
 		CD830B02220B52F100E35D3A /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD830B01220B52F100E35D3A /* NumberButton.swift */; };
-		CDB7C001220EB07C007DD9D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */; };
+		CDB7C001220EB07C007DD9D1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7C000220EB07C007DD9D1 /* UIColor+Extensions.swift */; };
 		CDCD2DF4220B257A0074AABD /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD2DF3220B257A0074AABD /* RoundedButton.swift */; };
 		CDCD2DF7220B2C5D0074AABD /* SignChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD2DF6220B2C5D0074AABD /* SignChangeButton.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		CD42E06E220B3AC7007710CE /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
 		CD68A99F2944E471004A66B3 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CD830B01220B52F100E35D3A /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
-		CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		CDB7C000220EB07C007DD9D1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CDCD2DF3220B257A0074AABD /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		CDCD2DF6220B2C5D0074AABD /* SignChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignChangeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,7 +182,7 @@
 		CDB7BFFF220EB049007DD9D1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */,
+				CDB7C000220EB07C007DD9D1 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,6 +208,7 @@
 				CD036D82220A26C300C598E1 /* Sources */,
 				CD036D83220A26C300C598E1 /* Frameworks */,
 				CD036D84220A26C300C598E1 /* Resources */,
+				CD68A9A72944EDC2004A66B3 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -324,13 +325,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CD68A9A72944EDC2004A66B3 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${PROJECT_DIR}/.project\nenv -i /bin/sh -c \"source /etc/profile && swift run swiftlint ../*/ --fix\"\nenv -i /bin/sh -c \"source /etc/profile && swift run swiftlint ../*/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD036D82220A26C300C598E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CD036D8C220A26C300C598E1 /* SimpleCalculatorViewController.swift in Sources */,
-				CDB7C001220EB07C007DD9D1 /* UIColorExtensions.swift in Sources */,
+				CDB7C001220EB07C007DD9D1 /* UIColor+Extensions.swift in Sources */,
 				CD830B02220B52F100E35D3A /* NumberButton.swift in Sources */,
 				CD42E06F220B3AC7007710CE /* OperatorButton.swift in Sources */,
 				CD036D8A220A26C300C598E1 /* AppDelegate.swift in Sources */,

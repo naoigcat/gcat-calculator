@@ -9,12 +9,10 @@
 import UIKit
 
 @IBDesignable
-class NumberButton: RoundedButton {
-
+internal class NumberButton: RoundedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         let height = self.frame.size.height
         self.titleLabel?.font = UIFont.systemFont(ofSize: height * 2 / 5)
     }
-
 }

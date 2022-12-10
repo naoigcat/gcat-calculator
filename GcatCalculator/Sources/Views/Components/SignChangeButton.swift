@@ -9,8 +9,7 @@
 import UIKit
 
 @IBDesignable
-class SignChangeButton: RoundedButton {
-
+internal class SignChangeButton: RoundedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         let height = self.frame.size.height
@@ -20,16 +19,15 @@ class SignChangeButton: RoundedButton {
         attributedText.addAttributes([
             .font: UIFont.systemFont(ofSize: height * 2 / 5),
             .kern: -height / 64,
-            ], range: NSMakeRange(0, 1))
+        ], range: NSRange(location: 0, length: 1))
         attributedText.addAttributes([
             .font: UIFont.systemFont(ofSize: height * 2 / 5),
             .kern: -height / 64,
-            ], range: NSMakeRange(1, 1))
+        ], range: NSRange(location: 1, length: 1))
         attributedText.addAttributes([
             .font: UIFont.systemFont(ofSize: height * 2 / 5),
-            .baselineOffset: NSNumber(value: Float(height * 3 / 64)),
-            ], range: NSMakeRange(2, 1))
+            .baselineOffset: Float(height * 3 / 64),
+        ], range: NSRange(location: 2, length: 1))
         self.setAttributedTitle(attributedText, for: .normal)
     }
-
 }
