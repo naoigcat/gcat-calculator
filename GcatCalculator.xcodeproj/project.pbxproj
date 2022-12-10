@@ -55,6 +55,7 @@
 		CD036DAC220A26C600C598E1 /* GcatCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GcatCalculatorUITests.swift; sourceTree = "<group>"; };
 		CD036DAE220A26C600C598E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD42E06E220B3AC7007710CE /* OperatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorButton.swift; sourceTree = "<group>"; };
+		CD68A99F2944E471004A66B3 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		CD830B01220B52F100E35D3A /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		CDB7C000220EB07C007DD9D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		CDCD2DF3220B257A0074AABD /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		CD036D88220A26C300C598E1 /* GcatCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				CD68A99D2944E471004A66B3 /* Configurations */,
 				CD036DBD220A30FE00C598E1 /* Resources */,
 				CD036DBC220A30E400C598E1 /* Sources */,
 				CD036DBE220A311500C598E1 /* Supporting Files */,
@@ -170,6 +172,14 @@
 				CD036D8B220A26C300C598E1 /* SimpleCalculatorViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD68A99D2944E471004A66B3 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				CD68A99F2944E471004A66B3 /* Config.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		CDB7BFFF220EB049007DD9D1 /* Extensions */ = {
@@ -388,6 +398,7 @@
 /* Begin XCBuildConfiguration section */
 		CD036DAF220A26C600C598E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD68A99F2944E471004A66B3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -450,6 +461,7 @@
 		};
 		CD036DB0220A26C600C598E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD68A99F2944E471004A66B3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
