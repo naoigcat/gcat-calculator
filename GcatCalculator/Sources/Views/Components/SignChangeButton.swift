@@ -8,26 +8,23 @@
 
 import UIKit
 
-@IBDesignable
 internal class SignChangeButton: RoundedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        let height = self.frame.size.height
-        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: height / 32, right: 0)
-        self.setTitle("", for: .normal)
-        let attributedText = NSMutableAttributedString(string: "\u{207A}\u{2044}\u{208B}")
-        attributedText.addAttributes([
-            .font: UIFont.systemFont(ofSize: height * 2 / 5),
-            .kern: -height / 64,
-        ], range: NSRange(location: 0, length: 1))
-        attributedText.addAttributes([
-            .font: UIFont.systemFont(ofSize: height * 2 / 5),
-            .kern: -height / 64,
-        ], range: NSRange(location: 1, length: 1))
-        attributedText.addAttributes([
-            .font: UIFont.systemFont(ofSize: height * 2 / 5),
-            .baselineOffset: Float(height * 3 / 64),
-        ], range: NSRange(location: 2, length: 1))
-        self.setAttributedTitle(attributedText, for: .normal)
+        self.configuration?.titlePadding = self.frame.height / 32
+        var attributedTitle = AttributedString("\u{207A}\u{2044}\u{208B}")
+        if let range = attributedTitle.range(of: "\u{207A}") {
+            attributedTitle[range].font = .systemFont(ofSize: self.frame.height * 2 / 5)
+            attributedTitle[range].kern = -self.frame.height / 64
+        }
+        if let range = attributedTitle.range(of: "\u{2044}") {
+            attributedTitle[range].font = .systemFont(ofSize: self.frame.height * 2 / 5)
+            attributedTitle[range].kern = -self.frame.height / 64
+        }
+        if let range = attributedTitle.range(of: "\u{208B}") {
+            attributedTitle[range].font = .systemFont(ofSize: self.frame.height * 2 / 5)
+            attributedTitle[range].kern = -self.frame.height / 64
+        }
+        self.configuration?.attributedTitle = attributedTitle
     }
 }

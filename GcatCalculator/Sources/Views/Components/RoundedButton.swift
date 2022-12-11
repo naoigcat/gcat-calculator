@@ -8,17 +8,21 @@
 
 import UIKit
 
-@IBDesignable
 internal class RoundedButton: UIButton {
+    var defaultBackgroundColor: UIColor?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setBackgroundImage(self.backgroundColor?.imageFilled(), for: .normal)
-        self.setBackgroundImage(self.backgroundColor?.lightened()?.imageFilled(), for: .highlighted)
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let height = self.frame.size.height
-        self.layer.cornerRadius = height / 2
+        if self.configuration == nil {
+            self.configuration = .filled()
+        }
+        self.configuration?.attributedTitle = AttributedString(self.title(for: .normal) ?? "")
+        self.configuration?.attributedTitle?.font = .systemFont(ofSize: self.frame.height * 2 / 5)
+        self.configuration?.background.backgroundColor = self.backgroundColor
+        self.configuration?.baseForegroundColor = self.tintColor
+        self.configuration?.cornerStyle = .capsule
+        self.defaultBackgroundColor = self.backgroundColor
+        self.backgroundColor = nil
+        self.setTitle(nil, for: .normal)
     }
 }

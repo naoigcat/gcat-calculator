@@ -44,7 +44,9 @@ internal class SimpleCalculatorViewController: UIViewController {
     }
 
     private func updateClearButton() {
-        self.clearButton.setTitle(self.inputLabel.text == "0" ? "AC" : "C", for: .normal)
+        var attributedTitle = AttributedString(self.inputLabel.text == "0" ? "AC" : "C")
+        attributedTitle.font = self.clearButton.configuration?.attributedTitle?.font
+        self.clearButton.configuration?.attributedTitle = attributedTitle
     }
 
     @IBAction private func number(_ sender: RoundedButton) {
@@ -170,7 +172,7 @@ internal class SimpleCalculatorViewController: UIViewController {
     }
 
     @IBAction private func clear(_ sender: RoundedButton) {
-        if self.clearButton.title(for: .normal) == "AC" {
+        if let attributedTitle = self.clearButton.configuration?.attributedTitle, String(attributedTitle.characters) == "AC" {
             self.memory = 0.0
             self.method = nil
             self.needsClearInput = false

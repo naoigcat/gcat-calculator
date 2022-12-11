@@ -8,27 +8,21 @@
 
 import UIKit
 
-@IBDesignable
 internal class OperatorButton: RoundedButton {
     override func awakeFromNib() {
         super.awakeFromNib()
-        let height = self.frame.size.height
-        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: height * 3 / 32, right: 0)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: height / 2)
+        self.configuration?.attributedTitle?.font = .systemFont(ofSize: self.frame.height / 2)
+        self.configuration?.attributedTitle?.baselineOffset = self.frame.height / 32
     }
 
     func setSelected(_ selected: Bool) {
         UIView.animate(withDuration: 1, animations: {
             if selected {
-                self.setBackgroundImage(UIColor.white.imageFilled(), for: .normal)
-                self.setBackgroundImage(UIColor.white.lightened()?.imageFilled(), for: .highlighted)
-                self.setTitleColor(self.backgroundColor, for: .normal)
-                self.setTitleColor(self.backgroundColor, for: .highlighted)
+                self.configuration?.background.backgroundColor = .white
+                self.configuration?.baseForegroundColor = self.defaultBackgroundColor
             } else {
-                self.setBackgroundImage(self.backgroundColor?.imageFilled(), for: .normal)
-                self.setBackgroundImage(self.backgroundColor?.lightened()?.imageFilled(), for: .highlighted)
-                self.setTitleColor(UIColor.white, for: .normal)
-                self.setTitleColor(UIColor.white, for: .highlighted)
+                self.configuration?.background.backgroundColor = self.defaultBackgroundColor
+                self.configuration?.baseForegroundColor = .white
             }
         })
     }
