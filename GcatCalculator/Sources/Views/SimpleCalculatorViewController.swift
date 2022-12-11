@@ -71,6 +71,8 @@ internal class SimpleCalculatorViewController: UIViewController {
             text += number
         } else if text == "0" {
             text = number
+        } else if text == "-0" {
+            text = "-" + number
         } else {
             text += number
         }
