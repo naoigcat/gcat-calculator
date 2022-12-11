@@ -65,8 +65,10 @@ internal class SimpleCalculatorViewController: UIViewController {
         if number == "." {
             if text.contains(".") {
                 return
+            } else if text.isEmpty {
+                text = "0"
             }
-            text = "0" + number
+            text += number
         } else if text == "0" {
             text = number
         } else {
